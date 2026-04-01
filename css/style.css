@@ -45,6 +45,17 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* All photos: cover their container */
+img.hero-photo,
+img.about-photo,
+img.enrollment-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
 img, svg { display: block; max-width: 100%; }
 
 a {
@@ -288,20 +299,25 @@ address { font-style: normal; }
   inset: 0;
   pointer-events: none;
 }
-.hero-svg {
+
+.hero-photo {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 40%;
+  filter: brightness(0.45) saturate(1.1);
 }
 
-/* Subtle organic texture overlay */
+/* Dark green tint + subtle vignette over the photo */
 .hero::after {
   content: '';
   position: absolute;
   inset: 0;
-  background-image:
-    radial-gradient(ellipse at 20% 80%, rgba(74,124,63,0.25) 0%, transparent 55%),
-    radial-gradient(ellipse at 80% 20%, rgba(26,61,28,0.4) 0%, transparent 50%);
+  background:
+    radial-gradient(ellipse at center, rgba(26,61,28,0.35) 0%, rgba(16,38,16,0.65) 100%),
+    linear-gradient(180deg, rgba(16,38,16,0.2) 0%, rgba(16,38,16,0.5) 100%);
   pointer-events: none;
 }
 
@@ -421,21 +437,13 @@ address { font-style: normal; }
   position: relative;
 }
 
-.about-image-placeholder {
+.about-image-frame {
   width: 100%;
   aspect-ratio: 3 / 4;
-  background: linear-gradient(145deg, #d8eccc 0%, #a8cc90 50%, #7aaa60 100%);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   box-shadow: var(--shadow-md);
-}
-
-.about-image-placeholder svg {
-  width: 70%;
-  opacity: 0.8;
+  background: #b0c8a0;
 }
 
 .about-leaf-accent {
@@ -604,7 +612,21 @@ address { font-style: normal; }
   display: flex;
   align-items: flex-end;
   padding: 1rem;
+  background-size: cover;
+  background-position: center;
+  background-color: #3a5a27;
 }
+
+/* dark scrim so labels stay readable */
+.gallery-item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 55%);
+  pointer-events: none;
+}
+
+.gallery-label { position: relative; z-index: 1; }
 
 .gallery-item--tall {
   grid-row: span 2;
@@ -737,20 +759,15 @@ address { font-style: normal; }
   justify-content: center;
 }
 
-.enrollment-image-placeholder {
+.enrollment-image-frame {
   width: 100%;
   max-width: 320px;
   aspect-ratio: 3 / 4;
-  background: linear-gradient(145deg, #c8e0be 0%, #96c27a 60%, #68a050 100%);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   box-shadow: var(--shadow-md);
+  background: #b0c8a0;
 }
-
-.enrollment-image-placeholder svg { width: 85%; }
 
 
 /* =======================================================

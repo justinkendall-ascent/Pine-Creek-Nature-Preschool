@@ -38,24 +38,12 @@
     <!-- ======= HERO ======= -->
     <section class="hero" id="hero" aria-label="Welcome">
       <div class="hero-bg" aria-hidden="true">
-        <svg class="hero-svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-          <!-- Sky gradient done in CSS; these are organic foliage shapes -->
-          <ellipse cx="200" cy="700" rx="180" ry="260" fill="#1a3d1c" opacity="0.6"/>
-          <ellipse cx="180" cy="640" rx="120" ry="200" fill="#2c5f2e" opacity="0.5"/>
-          <ellipse cx="1280" cy="720" rx="200" ry="280" fill="#1a3d1c" opacity="0.6"/>
-          <ellipse cx="1300" cy="650" rx="130" ry="210" fill="#2c5f2e" opacity="0.5"/>
-          <ellipse cx="760" cy="820" rx="320" ry="160" fill="#1a3d1c" opacity="0.4"/>
-          <!-- Foreground ground -->
-          <ellipse cx="720" cy="920" rx="760" ry="200" fill="#1a3d1c" opacity="0.7"/>
-          <!-- Small tree left -->
-          <rect x="115" y="480" width="18" height="280" rx="9" fill="#3d2b1f" opacity="0.7"/>
-          <!-- Small tree right -->
-          <rect x="1310" y="500" width="16" height="260" rx="8" fill="#3d2b1f" opacity="0.7"/>
-          <!-- Leaf clusters scattered -->
-          <circle cx="400" cy="300" r="90" fill="#2c5f2e" opacity="0.25"/>
-          <circle cx="1050" cy="250" r="110" fill="#2c5f2e" opacity="0.2"/>
-          <circle cx="700" cy="150" r="70" fill="#4a7c3f" opacity="0.15"/>
-        </svg>
+        <img
+          src="https://images.pexels.com/photos/4827/nature-forest-trees-fog.jpg?auto=compress&cs=tinysrgb&w=1600"
+          alt=""
+          class="hero-photo"
+          fetchpriority="high"
+        >
       </div>
       <div class="hero-content">
         <p class="hero-eyebrow">Baker City, Oregon</p>
@@ -97,8 +85,13 @@
     <section class="section about" id="about">
       <div class="container about-grid">
         <div class="about-image-wrap">
-          <div class="about-image-placeholder">
-            <svg viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="80" r="40" fill="#6a8f5299"/><ellipse cx="100" cy="160" rx="60" ry="40" fill="#4a7c3f66"/><text x="100" y="195" text-anchor="middle" font-size="11" fill="#fdfaf588" font-family="Lato, sans-serif">Photo — replace with image</text></svg>
+          <div class="about-image-frame">
+            <img
+              src="https://images.pexels.com/photos/31715570/pexels-photo-31715570.jpeg?auto=compress&cs=tinysrgb&w=800"
+              alt="Emily Denee, founder of Pine Creek Nature Preschool, in the Oregon outdoors"
+              class="about-photo"
+              loading="lazy"
+            >
           </div>
           <div class="about-leaf-accent" aria-hidden="true">
             <svg viewBox="0 0 120 160"><path d="M60 10 C20 40 10 80 60 150 C110 80 100 40 60 10Z" fill="#4a7c3f" opacity="0.18"/><line x1="60" y1="150" x2="60" y2="20" stroke="#4a7c3f" stroke-width="1" opacity="0.3"/></svg>
@@ -250,22 +243,28 @@
         </div>
       </div>
       <div class="gallery-grid">
-        <div class="gallery-item gallery-item--tall" style="background-color: #2c5f2e;">
+        <div class="gallery-item gallery-item--tall"
+             style="background-image: url('https://images.pexels.com/photos/2450501/pexels-photo-2450501.jpeg?auto=compress&cs=tinysrgb&w=900');">
           <span class="gallery-label">Creek Play</span>
         </div>
-        <div class="gallery-item" style="background-color: #4a7c3f;">
+        <div class="gallery-item"
+             style="background-image: url('https://images.pexels.com/photos/13735348/pexels-photo-13735348.jpeg?auto=compress&cs=tinysrgb&w=800');">
           <span class="gallery-label">Loose Parts Building</span>
         </div>
-        <div class="gallery-item" style="background-color: #6b4226;">
+        <div class="gallery-item"
+             style="background-image: url('https://images.pexels.com/photos/8813542/pexels-photo-8813542.jpeg?auto=compress&cs=tinysrgb&w=800');">
           <span class="gallery-label">Gnome Village</span>
         </div>
-        <div class="gallery-item gallery-item--wide" style="background-color: #bf5b2b;">
+        <div class="gallery-item gallery-item--wide"
+             style="background-image: url('https://images.pexels.com/photos/7782160/pexels-photo-7782160.jpeg?auto=compress&cs=tinysrgb&w=1200');">
           <span class="gallery-label">Worm Box Tending</span>
         </div>
-        <div class="gallery-item" style="background-color: #3d6b32;">
+        <div class="gallery-item"
+             style="background-image: url('https://images.pexels.com/photos/14810985/pexels-photo-14810985.jpeg?auto=compress&cs=tinysrgb&w=800');">
           <span class="gallery-label">Winter Exploration</span>
         </div>
-        <div class="gallery-item" style="background-color: #7a5230;">
+        <div class="gallery-item"
+             style="background-image: url('https://images.pexels.com/photos/8613319/pexels-photo-8613319.jpeg?auto=compress&cs=tinysrgb&w=800');">
           <span class="gallery-label">Morning Circle</span>
         </div>
       </div>
@@ -332,15 +331,13 @@
           <a href="#contact" class="btn btn-primary">Get in Touch</a>
         </div>
         <div class="enrollment-image-wrap">
-          <div class="enrollment-image-placeholder">
-            <svg viewBox="0 0 300 380" aria-hidden="true">
-              <rect width="300" height="380" fill="#3a5a2718" rx="8"/>
-              <path d="M150 40 C80 80 60 160 150 340 C240 160 220 80 150 40Z" fill="#4a7c3f" opacity="0.18"/>
-              <line x1="150" y1="340" x2="150" y2="60" stroke="#4a7c3f" stroke-width="1" opacity="0.3"/>
-              <line x1="150" y1="160" x2="100" y2="120" stroke="#4a7c3f" stroke-width="1" opacity="0.3"/>
-              <line x1="150" y1="210" x2="200" y2="170" stroke="#4a7c3f" stroke-width="1" opacity="0.3"/>
-              <text x="150" y="368" text-anchor="middle" font-size="10" fill="#4a7c3f88" font-family="Lato, sans-serif">Photo — replace with image</text>
-            </svg>
+          <div class="enrollment-image-frame">
+            <img
+              src="https://images.pexels.com/photos/5015419/pexels-photo-5015419.jpeg?auto=compress&cs=tinysrgb&w=800"
+              alt="Misty forest in Oregon"
+              class="enrollment-photo"
+              loading="lazy"
+            >
           </div>
         </div>
       </div>
@@ -394,7 +391,11 @@
       <div class="footer-bottom">
         <div class="container">
           <p>&copy; <span id="year"></span> Pine Creek Nature Preschool &mdash; Baker City, Oregon</p>
-          <p>Website by Emily Denee &amp; team &mdash; <a href="https://instagram.com/pinecreeknaturepreschool" target="_blank" rel="noopener noreferrer">Follow on Instagram</a></p>
+          <p>
+            <a href="https://instagram.com/pinecreeknaturepreschool" target="_blank" rel="noopener noreferrer">Follow on Instagram</a>
+            &ensp;&middot;&ensp;
+            <span class="photo-credits">Stock photos via <a href="https://www.pexels.com" target="_blank" rel="noopener noreferrer">Pexels</a> — placeholder images to be replaced</span>
+          </p>
         </div>
       </div>
     </footer>
