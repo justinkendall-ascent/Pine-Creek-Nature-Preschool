@@ -45,8 +45,8 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* All photos: cover their container */
-img.hero-photo,
+img, svg { display: block; max-width: 100%; }
+
 img.about-photo,
 img.enrollment-photo {
   display: block;
@@ -55,8 +55,6 @@ img.enrollment-photo {
   object-fit: cover;
   object-position: center;
 }
-
-img, svg { display: block; max-width: 100%; }
 
 a {
   color: var(--green-mid);
@@ -291,34 +289,12 @@ address { font-style: normal; }
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: linear-gradient(160deg, #1a3d1c 0%, #2c5f2e 40%, #3a7030 65%, #2a4f1c 100%);
-}
-
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-
-.hero-photo {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 40%;
-  filter: brightness(0.45) saturate(1.1);
-}
-
-/* Dark green tint + subtle vignette over the photo */
-.hero::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse at center, rgba(26,61,28,0.35) 0%, rgba(16,38,16,0.65) 100%),
-    linear-gradient(180deg, rgba(16,38,16,0.2) 0%, rgba(16,38,16,0.5) 100%);
-  pointer-events: none;
+  background-color: #1a3d1c;
+  background-image:
+    linear-gradient(160deg, rgba(16,38,16,0.58) 0%, rgba(26,61,28,0.48) 100%),
+    url('https://images.pexels.com/photos/167698/pexels-photo-167698.jpeg?auto=compress&cs=tinysrgb&w=1600');
+  background-size: cover;
+  background-position: center 40%;
 }
 
 .hero-content {
