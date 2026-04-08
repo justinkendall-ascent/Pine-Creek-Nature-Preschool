@@ -193,32 +193,17 @@ address { font-style: normal; }
 .nav-logo {
   display: flex;
   align-items: center;
-  gap: 0.65rem;
   text-decoration: none;
-  color: #fff;
-  transition: color var(--transition);
-}
-.site-header.scrolled .nav-logo { color: var(--green-deep); }
-
-.nav-logo-leaf {
-  width: 34px;
-  height: 34px;
-  flex-shrink: 0;
 }
 
-.nav-logo-text {
-  font-family: var(--font-serif);
-  font-size: 0.88rem;
-  font-weight: 600;
-  line-height: 1.3;
-}
-.nav-logo-text em {
-  font-weight: 400;
-  font-style: italic;
+.nav-logo-img {
+  height: 46px;
+  width: auto;
   display: block;
-  font-size: 0.78rem;
-  opacity: 0.85;
+  filter: drop-shadow(0 1px 4px rgba(0,0,0,0.35));
+  transition: opacity var(--transition);
 }
+.nav-logo-img:hover { opacity: 0.88; }
 
 .nav-links {
   display: flex;
@@ -291,8 +276,8 @@ address { font-style: normal; }
   overflow: hidden;
   background-color: #1a3d1c;
   background-image:
-    linear-gradient(160deg, rgba(16,38,16,0.58) 0%, rgba(26,61,28,0.48) 100%),
-    url('https://images.pexels.com/photos/167698/pexels-photo-167698.jpeg?auto=compress&cs=tinysrgb&w=1600');
+    linear-gradient(160deg, rgba(16,38,16,0.55) 0%, rgba(26,61,28,0.45) 100%),
+    url('../images/IMG_6910.webp');
   background-size: cover;
   background-position: center 40%;
 }
@@ -625,15 +610,6 @@ address { font-style: normal; }
   backdrop-filter: blur(4px);
 }
 
-.gallery-instagram {
-  text-align: center;
-  font-size: 1rem;
-  color: var(--text-mid);
-}
-.gallery-instagram a {
-  font-weight: 700;
-  color: var(--green-mid);
-}
 
 
 /* =======================================================
@@ -831,21 +807,6 @@ address { font-style: normal; }
 }
 .footer-contact address a:hover { color: #fff; }
 
-.hours-table {
-  font-size: 0.85rem;
-  border-collapse: collapse;
-  width: 100%;
-  margin-bottom: 1rem;
-}
-.hours-table td { padding: 0.3rem 0; color: rgba(255,255,255,0.65); }
-.hours-table td:last-child { text-align: right; color: rgba(255,255,255,0.45); }
-
-.hours-note {
-  font-size: 0.78rem;
-  color: rgba(255,255,255,0.4);
-  line-height: 1.5;
-  margin: 0;
-}
 
 .footer-bottom {
   border-top: 1px solid rgba(255,255,255,0.08);
@@ -881,13 +842,6 @@ address { font-style: normal; }
 
   .about-image-wrap { order: -1; max-width: 440px; margin-inline: auto; }
   .enrollment-image-wrap { order: -1; max-width: 320px; margin-inline: auto; }
-
-  .footer-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-  }
-
-  .footer-brand { grid-column: span 2; }
 
   .gallery-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -951,15 +905,6 @@ address { font-style: normal; }
   .gallery-item--tall,
   .gallery-item--wide { grid-row: span 1; grid-column: span 1; }
 
-  /* Footer */
-  .footer-grid { grid-template-columns: 1fr; }
-  .footer-brand { grid-column: span 1; }
-
-  .footer-bottom .container {
-    flex-direction: column;
-    text-align: center;
-  }
-
   /* Pillars */
   .pillars { grid-template-columns: 1fr; }
   .program-cards { grid-template-columns: 1fr; }
@@ -970,4 +915,475 @@ address { font-style: normal; }
     align-items: center;
     gap: 0.6rem;
   }
+
+  /* Daily rhythm */
+  .rhythm-tabs { flex-direction: column; align-items: stretch; }
+  .rhythm-tab { text-align: center; }
+
+  /* Family links */
+  .family-links { grid-template-columns: 1fr 1fr; }
+
+  /* Footer form */
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-brand { grid-column: span 1; }
 }
+
+
+/* =======================================================
+   ABOUT — additional
+   ======================================================= */
+.about-mission {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.08rem;
+  color: var(--green-deep);
+  border-left: 3px solid var(--green-sage);
+  padding-left: 1.25rem;
+  margin: 1.5rem 0;
+  line-height: 1.65;
+}
+
+.about-team,
+.about-location {
+  margin-top: 1.75rem;
+}
+
+.about-team h3,
+.about-location h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--green-deep);
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.01em;
+}
+
+.team-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 0.95rem;
+  color: var(--text-mid);
+}
+
+.about-location p {
+  font-size: 0.95rem;
+}
+
+.about-map {
+  margin-top: 1.5rem;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.philosophy-link {
+  text-align: center;
+  margin-top: 2.5rem;
+  font-size: 0.92rem;
+}
+
+
+/* =======================================================
+   DAILY RHYTHM
+   ======================================================= */
+.daily-rhythm {
+  margin-top: 3.5rem;
+  background: var(--cream);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 2rem;
+}
+
+.daily-rhythm-title {
+  text-align: center;
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  color: var(--green-deep);
+  margin-bottom: 1.5rem;
+}
+
+.rhythm-tabs {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 1.75rem;
+}
+
+.rhythm-tab {
+  background: var(--off-white);
+  border: 2px solid transparent;
+  border-radius: 4px;
+  padding: 0.55rem 1.4rem;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--text-mid);
+  cursor: pointer;
+  transition: background var(--transition), border-color var(--transition), color var(--transition);
+}
+
+.rhythm-tab:hover {
+  border-color: var(--green-sage);
+  color: var(--green-deep);
+}
+
+.rhythm-tab.active {
+  background: var(--green-deep);
+  border-color: var(--green-deep);
+  color: #fff;
+}
+
+.rhythm-panel { display: none; }
+.rhythm-panel.active { display: block; }
+
+.rhythm-subtitle {
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--terracotta);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+
+.rhythm-schedule {
+  max-width: 480px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.rhythm-schedule > div {
+  display: flex;
+  gap: 1.5rem;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid rgba(0,0,0,0.07);
+  align-items: baseline;
+}
+
+.rhythm-schedule > div:last-child { border-bottom: none; }
+
+.rhythm-schedule dt {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: var(--green-deep);
+  min-width: 3.2rem;
+  flex-shrink: 0;
+}
+
+.rhythm-schedule dd {
+  font-size: 0.92rem;
+  color: var(--text-mid);
+  margin: 0;
+}
+
+.rhythm-pickup dt,
+.rhythm-pickup dd {
+  color: var(--terracotta);
+  font-weight: 700;
+}
+
+
+/* =======================================================
+   GALLERY — footer note
+   ======================================================= */
+.gallery-footer {
+  text-align: center;
+  font-size: 1rem;
+  color: var(--text-mid);
+  padding-top: 1.5rem;
+}
+.gallery-footer a { font-weight: 700; color: var(--green-mid); }
+
+
+/* =======================================================
+   ENROLLMENT — fees box & tuition table
+   ======================================================= */
+.fees-box {
+  margin: 2rem 0;
+  background: var(--cream);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  border-left: 4px solid var(--green-sage);
+}
+
+.fees-box h4 {
+  color: var(--green-deep);
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.tuition-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+  margin-bottom: 1.25rem;
+}
+
+.tuition-table th {
+  text-align: left;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  padding: 0 0.5rem 0.6rem 0;
+  border-bottom: 2px solid rgba(0,0,0,0.1);
+}
+
+.tuition-table td {
+  padding: 0.5rem 0.5rem 0.5rem 0;
+  color: var(--text-mid);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.tuition-table td:last-child {
+  font-weight: 700;
+  color: var(--green-deep);
+  text-align: right;
+  padding-right: 0;
+}
+
+.tuition-table tr:last-child td { border-bottom: none; }
+
+.fees-notes {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 0.88rem;
+  color: var(--text-mid);
+  margin-bottom: 0.75rem;
+}
+
+.fees-notes li::before {
+  content: '→ ';
+  color: var(--green-sage);
+  font-weight: 700;
+}
+
+.fees-barrier {
+  font-size: 0.88rem;
+  font-style: italic;
+  color: var(--text-light);
+  margin: 0;
+}
+
+
+/* =======================================================
+   FOR FAMILIES
+   ======================================================= */
+.families { background: var(--cream); }
+
+.family-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.25rem;
+}
+
+.family-link-card {
+  background: var(--off-white);
+  border: 2px solid transparent;
+  border-radius: var(--radius-lg);
+  padding: 1.5rem 1.25rem;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  box-shadow: var(--shadow);
+  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+}
+
+.family-link-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--green-sage);
+  box-shadow: var(--shadow-md);
+}
+
+.family-link-card--placeholder {
+  opacity: 0.75;
+}
+
+.flc-icon {
+  width: 36px;
+  height: 36px;
+  color: var(--green-mid);
+  margin-bottom: 0.25rem;
+}
+
+.flc-icon svg { width: 100%; height: 100%; }
+
+.flc-label {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.3;
+}
+
+.flc-sub {
+  font-size: 0.8rem;
+  color: var(--text-light);
+}
+
+
+/* =======================================================
+   FOOTER — updated layout for contact form
+   ======================================================= */
+.footer-grid {
+  grid-template-columns: 1fr 1fr 1.4fr;
+}
+
+.footer-logo-img {
+  height: 56px;
+  width: auto;
+  display: block;
+  margin-bottom: 1rem;
+  /* Invert to white for dark footer background */
+  filter: brightness(0) invert(1);
+  opacity: 0.9;
+}
+
+.footer-contact-form h4 {
+  color: #fff;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.form-row label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: rgba(255,255,255,0.6);
+  text-transform: uppercase;
+}
+
+.form-row input,
+.form-row textarea {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: var(--radius);
+  padding: 0.55rem 0.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: #fff;
+  width: 100%;
+  transition: border-color var(--transition), background var(--transition);
+}
+
+.form-row input::placeholder,
+.form-row textarea::placeholder {
+  color: rgba(255,255,255,0.35);
+}
+
+.form-row input:focus,
+.form-row textarea:focus {
+  outline: none;
+  border-color: var(--green-sage);
+  background: rgba(255,255,255,0.1);
+}
+
+.form-row textarea { resize: vertical; }
+
+.contact-form .btn { margin-top: 0.25rem; align-self: flex-start; }
+
+
+/* =======================================================
+   FOOTER BOTTOM — employment & EEO
+   ======================================================= */
+.footer-bottom-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.35);
+}
+
+.footer-employment { color: rgba(255,255,255,0.4); }
+
+.footer-eeo {
+  max-width: 700px;
+}
+
+.footer-eeo summary {
+  cursor: pointer;
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.35);
+  user-select: none;
+  list-style: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.footer-eeo summary::-webkit-details-marker { display: none; }
+
+.footer-eeo summary::after {
+  content: '▸';
+  font-size: 0.65rem;
+  transition: transform var(--transition);
+}
+
+.footer-eeo[open] summary::after { transform: rotate(90deg); }
+
+.footer-eeo p {
+  margin-top: 0.6rem;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.3);
+  line-height: 1.55;
+  margin-bottom: 0;
+}
+
+
+/* =======================================================
+   RESPONSIVE UPDATES for new components
+   ======================================================= */
+@media (max-width: 900px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  .footer-brand { grid-column: span 2; }
+  .footer-contact-form { grid-column: span 2; }
+}
+
+@media (max-width: 640px) {
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-brand,
+  .footer-contact-form { grid-column: span 1; }
+
+  .family-links { grid-template-columns: 1fr; }
+
+  .fees-box { padding: 1.25rem; }
+
+  .daily-rhythm { padding: 1.75rem 1rem; }
+}
+
+
+/* =======================================================
+   GALLERY — background images
+   ======================================================= */
+.gi-creek { background-image: url('../images/IMG_8570.webp'); }
+.gi-art   { background-image: url('../images/IMG_1437.webp'); }
+.gi-chalk { background-image: url('../images/IMG_2829.webp'); }
+.gi-hill  { background-image: url('../images/IMG_8586.webp'); }
+.gi-snow  { background-image: url('../images/IMG_6224.webp'); }
+.gi-loose { background-image: url('../images/IMG_3131.webp'); }

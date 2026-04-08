@@ -104,9 +104,37 @@
   }
 
 
+  // ---- Daily Rhythm tabs ----
+  const rhythmTabs = document.querySelectorAll('.rhythm-tab');
+  const rhythmPanels = document.querySelectorAll('.rhythm-panel');
+
+  rhythmTabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      const targetId = tab.getAttribute('aria-controls');
+
+      rhythmTabs.forEach(function (t) {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      rhythmPanels.forEach(function (p) {
+        p.classList.remove('active');
+        p.hidden = true;
+      });
+
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
+      const panel = document.getElementById(targetId);
+      if (panel) {
+        panel.classList.add('active');
+        panel.hidden = false;
+      }
+    });
+  });
+
+
   // ---- Reveal on scroll (simple fade-in) ----
   const revealEls = document.querySelectorAll(
-    '.pillar, .program-card, .testimonial, .enrollment-step, .gallery-item'
+    '.pillar, .program-card, .testimonial, .enrollment-step, .gallery-item, .family-link-card'
   );
 
   const revealObserver = new IntersectionObserver(
