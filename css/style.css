@@ -1387,3 +1387,144 @@ address { font-style: normal; }
 .gi-hill  { background-image: url('../images/IMG_8586.webp'); }
 .gi-snow  { background-image: url('../images/IMG_6224.webp'); }
 .gi-loose { background-image: url('../images/IMG_3131.webp'); }
+
+
+/* =======================================================
+   DESIGN POLISH
+   ======================================================= */
+
+/* — Section eyebrow: short rule before label — */
+.section-eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 1.5px;
+  background: currentColor;
+  vertical-align: middle;
+  margin-right: 0.55rem;
+  margin-bottom: 1px;
+  opacity: 0.5;
+  border-radius: 1px;
+}
+
+/* — Centered section H2: terracotta ornament line below — */
+.section-header.centered h2 {
+  position: relative;
+  padding-bottom: 0.9rem;
+}
+.section-header.centered h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 44px;
+  height: 2px;
+  background: var(--terracotta);
+  border-radius: 1px;
+  opacity: 0.65;
+}
+
+/* — About mission quote: subtle background warmth — */
+.about-mission {
+  background: rgba(74, 124, 63, 0.06);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 0.9rem 1.25rem;
+}
+
+/* — Philosophy section: large faded leaf watermark — */
+.philosophy {
+  position: relative;
+  overflow: hidden;
+}
+.philosophy::after {
+  content: '';
+  position: absolute;
+  right: -6%;
+  top: 8%;
+  width: 38%;
+  max-width: 400px;
+  aspect-ratio: 3 / 4;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 160'%3E%3Cpath d='M60 10 C20 40 10 80 60 150 C110 80 100 40 60 10Z' fill='%234a7c3f'/%3E%3Cline x1='60' y1='150' x2='60' y2='18' stroke='%234a7c3f' stroke-width='2'/%3E%3Cline x1='60' y1='62' x2='28' y2='46' stroke='%234a7c3f' stroke-width='1.5'/%3E%3Cline x1='60' y1='84' x2='92' y2='68' stroke='%234a7c3f' stroke-width='1.5'/%3E%3Cline x1='60' y1='106' x2='26' y2='92' stroke='%234a7c3f' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+}
+.philosophy .container { position: relative; z-index: 1; }
+
+/* — Pillar icon: circular soft background — */
+.pillar-icon {
+  background: rgba(74, 124, 63, 0.09);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* — Testimonials: large decorative opening quote — */
+.testimonial {
+  position: relative;
+  overflow: hidden;
+}
+.testimonial::before {
+  content: '\201C';
+  font-family: var(--font-serif);
+  font-size: 8rem;
+  line-height: 0.85;
+  color: rgba(255, 255, 255, 0.07);
+  position: absolute;
+  top: 0.75rem;
+  left: 1.1rem;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* — Gallery items: hover zoom via ::before bg layer — */
+/* Move images to ::before so they can transform independently */
+.gi-creek, .gi-art, .gi-chalk,
+.gi-hill,  .gi-snow, .gi-loose { background-image: none; }
+
+.gallery-item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.55s ease;
+  z-index: 0;
+}
+.gallery-item:hover::before { transform: scale(1.07); }
+
+.gi-creek::before { background-image: url('../images/IMG_8570.webp'); background-position: center top; }
+.gi-art::before   { background-image: url('../images/IMG_1437.webp'); }
+.gi-chalk::before { background-image: url('../images/IMG_2829.webp'); }
+.gi-hill::before  { background-image: url('../images/IMG_8586.webp'); background-position: center 30%; }
+.gi-snow::before  { background-image: url('../images/IMG_6224.webp'); }
+.gi-loose::before { background-image: url('../images/IMG_3131.webp'); }
+
+/* Ensure scrim and label sit above the zoomable bg layer */
+.gallery-item::after  { z-index: 1; }
+.gallery-label        { z-index: 2; }
+
+/* — Enrollment steps: faint vertical connector line — */
+.enrollment-steps {
+  position: relative;
+}
+.enrollment-steps::before {
+  content: '';
+  position: absolute;
+  left: 18px;
+  top: 44px;
+  bottom: 20px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--green-sage), transparent);
+  opacity: 0.3;
+  border-radius: 1px;
+}
+
+/* — Band: subtle top/bottom border for definition — */
+.band {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.18);
+}
