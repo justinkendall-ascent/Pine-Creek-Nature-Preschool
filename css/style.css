@@ -170,13 +170,9 @@ address { font-style: normal; }
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 100;
-  transition: background var(--transition), box-shadow var(--transition), padding var(--transition);
-  padding: 1.1rem 0;
-}
-
-.site-header.scrolled {
   background: var(--off-white);
   box-shadow: 0 2px 20px rgba(30,44,26,0.12);
+  transition: padding var(--transition);
   padding: 0.6rem 0;
 }
 
@@ -218,15 +214,12 @@ address { font-style: normal; }
   font-size: 0.88rem;
   font-weight: 700;
   letter-spacing: 0.02em;
-  color: rgba(255,255,255,0.9);
+  color: var(--text-mid);
   text-decoration: none;
   border-radius: 3px;
   transition: color var(--transition), background var(--transition);
 }
-.nav-links a:hover { color: #fff; background: rgba(255,255,255,0.12); }
-
-.site-header.scrolled .nav-links a { color: var(--text-mid); }
-.site-header.scrolled .nav-links a:hover { color: var(--green-deep); background: var(--cream); }
+.nav-links a:hover { color: var(--green-deep); background: var(--cream); }
 
 .nav-cta {
   background: var(--terracotta) !important;
@@ -253,11 +246,10 @@ address { font-style: normal; }
   display: block;
   width: 24px;
   height: 2px;
-  background: #fff;
+  background: var(--green-deep);
   border-radius: 2px;
   transition: transform var(--transition), opacity var(--transition);
 }
-.site-header.scrolled .nav-toggle span { background: var(--green-deep); }
 
 .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .nav-toggle.open span:nth-child(2) { opacity: 0; }
@@ -269,17 +261,19 @@ address { font-style: normal; }
    ======================================================= */
 .hero {
   position: relative;
-  min-height: 100svh;
+  min-height: 40vh;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   background-color: #1a3d1c;
   background-image:
-    linear-gradient(160deg, rgba(16,38,16,0.55) 0%, rgba(26,61,28,0.45) 100%),
+    linear-gradient(160deg, rgba(16,38,16,0.60) 0%, rgba(26,61,28,0.50) 100%),
     url('../images/IMG_6910.webp');
   background-size: cover;
   background-position: center 40%;
+  /* offset so it starts below the nav */
+  padding-top: 64px;
 }
 
 .hero-content {
@@ -308,16 +302,8 @@ address { font-style: normal; }
 
 .hero-headline {
   color: #fff;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
   text-shadow: 0 2px 24px rgba(0,0,0,0.3);
-}
-
-.hero-sub {
-  font-size: 1.15rem;
-  color: rgba(255,255,255,0.85);
-  max-width: 520px;
-  margin: 0 auto 2rem;
-  font-weight: 300;
 }
 
 .hero-actions {
@@ -325,22 +311,6 @@ address { font-style: normal; }
   gap: 1rem;
   justify-content: center;
   flex-wrap: wrap;
-}
-
-.hero-scroll {
-  position: absolute;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
-  color: rgba(255,255,255,0.5);
-  width: 28px;
-  animation: bounce 2s infinite;
-}
-
-@keyframes bounce {
-  0%, 100% { transform: translateX(-50%) translateY(0); }
-  50%       { transform: translateX(-50%) translateY(8px); }
 }
 
 
@@ -878,14 +848,13 @@ address { font-style: normal; }
   .nav-links.open { transform: translateX(0); }
 
   .nav-links a {
-    color: var(--text-dark) !important;
     font-size: 1.2rem;
     padding: 0.75rem 1.5rem;
   }
 
   .nav-links a:hover {
-    background: var(--cream) !important;
-    color: var(--green-deep) !important;
+    background: var(--cream);
+    color: var(--green-deep);
   }
 
   .nav-cta {
@@ -1304,6 +1273,25 @@ address { font-style: normal; }
 .form-row textarea { resize: vertical; }
 
 .contact-form .btn { margin-top: 0.25rem; align-self: flex-start; }
+
+.form-status {
+  font-size: 0.88rem;
+  border-radius: var(--radius);
+  padding: 0;
+  transition: all var(--transition);
+}
+.form-status--success {
+  color: #a8e6a3;
+  padding: 0.6rem 0.75rem;
+  background: rgba(168, 230, 163, 0.12);
+  border: 1px solid rgba(168, 230, 163, 0.25);
+}
+.form-status--error {
+  color: #f4a99a;
+  padding: 0.6rem 0.75rem;
+  background: rgba(244, 169, 154, 0.12);
+  border: 1px solid rgba(244, 169, 154, 0.25);
+}
 
 
 /* =======================================================

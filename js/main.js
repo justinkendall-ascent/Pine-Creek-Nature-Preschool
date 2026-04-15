@@ -176,4 +176,51 @@
     });
   }, 100);
 
+  // ---- Contact form (Web3Forms) ----
+  const contactForm = document.getElementById('contact-form');
+  const formStatus = document.getElementById('form-status');
+  const formSubmit = document.getElementById('form-submit');
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      // Basic client-side validation
+      if (!contactForm.checkValidity()) {
+        contactForm.reportValidity();
+        return;
+      }
+
+      formSubmit.disabled = true;
+      formSubmit.textContent = 'Sending…';
+      formStatus.className = 'form-status';
+      formStatus.textContent = '';
+
+      const data = new FormData(contactForm);
+
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: data,
+      })
+        .then(function (res) { return res.json(); })
+        .then(function (json) {
+          if (json.success) {
+            formStatus.className = 'form-status form-status--success';
+            formStatus.textContent = 'Thank you! We’ll be in touch soon.';
+            contactForm.reset();
+          } else {
+            throw new Error(json.message || 'Submission failed.');
+          }
+        })
+        .catch(function (err) {
+          formStatus.className = 'form-status form-status--error';
+          formStatus.textContent = 'Something went wrong. Please email us directly at pinecreeknatureschool@gmail.com.';
+        })
+        .finally(function () {
+          formSubmit.disabled = false;
+          formSubmit.textContent = 'Send Message';
+        });
+    });
+  }
+
 })();
