@@ -98,7 +98,7 @@
 
 
   // ---- Nav logo reveal when hero logo scrolls out ----
-  const heroLogo = document.querySelector('.hero-logo');
+  const heroLogo = document.querySelector('.mission-banner-logo');
   if (heroLogo && header) {
     const heroLogoObserver = new IntersectionObserver(
       function (entries) {
