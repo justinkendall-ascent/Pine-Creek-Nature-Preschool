@@ -314,40 +314,14 @@ address { font-style: normal; }
 .hero-headline {
   color: #fff;
   margin: 0;
-  font-size: clamp(1.6rem, 3.2vw, 2.4rem);
+  font-size: clamp(2rem, 5vw, 3.6rem);
   text-shadow: 0 2px 24px rgba(0,0,0,0.3);
 }
 
-.hero-main {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-}
-
-.hero-logo {
-  width: clamp(110px, 16vw, 170px);
-  height: clamp(110px, 16vw, 170px);
-  border-radius: 50%;
-  object-fit: cover;
-  background: #fff;
-  padding: 6px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
-  flex-shrink: 0;
-}
-
-.hero-main .hero-headline {
-  flex: 1;
-  text-align: center;
-}
-
-.hero-actions {
-  display: flex;
-  gap: 1rem;
-  justify-content: flex-end;
-  flex-wrap: wrap;
-  flex-shrink: 0;
+.hero-enroll-btn {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
 }
 
 
@@ -924,9 +898,10 @@ address { font-style: normal; }
   }
 
   /* Hero */
-  .hero-actions { flex-direction: column; align-items: center; justify-content: center; }
-  .hero-main { flex-direction: column; }
-  .hero-main .hero-headline { text-align: center; }
+  .hero-enroll-btn { bottom: 1.25rem; left: 1.25rem; font-size: 0.85rem; padding: 0.6rem 1rem; }
+  .about-mission-wrap { flex-direction: column; text-align: center; }
+  .about-logo { width: 70px; height: 70px; }
+  .photo-strip-grid { grid-template-columns: repeat(2, 1fr); height: 320px; }
 
   /* Gallery */
   .gallery-grid {
@@ -1519,16 +1494,93 @@ address { font-style: normal; }
   background: rgba(74, 124, 63, 0.06);
   border-radius: 0 var(--radius) var(--radius) 0;
   padding: 0.9rem 1.25rem;
+  margin: 0;
 }
 
-.about-mission--centered {
-  text-align: center;
-  border-left: none;
-  border-radius: var(--radius);
-  padding: 1.25rem 1.5rem;
-  margin: 1.5rem auto 2rem;
-  max-width: 640px;
-  font-size: 1.25rem;
+.about-mission-wrap {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.about-logo {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  box-shadow: 0 2px 12px rgba(30,44,26,0.18);
+}
+
+.team-description {
+  margin-top: 0.75rem;
+  font-style: italic;
+  color: var(--text-mid);
+  font-size: 0.95rem;
+}
+
+/* — Testimonials — */
+.testimonials-section { background: var(--cream); }
+
+.testimonial-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.testimonial-card {
+  background: var(--off-white);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  box-shadow: var(--shadow);
+  border-left: 4px solid var(--green-sage);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 0;
+}
+
+.testimonial-card p {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--text-mid);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.testimonial-card footer {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--green-deep);
+  letter-spacing: 0.04em;
+}
+
+/* — Photo strip — */
+.photo-strip {
+  overflow: hidden;
+}
+
+.photo-strip-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  height: 260px;
+}
+
+.photo-strip-item {
+  overflow: hidden;
+}
+
+.photo-strip-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.photo-strip-item:hover img {
+  transform: scale(1.05);
 }
 
 /* — Philosophy section: large faded leaf watermark — */
