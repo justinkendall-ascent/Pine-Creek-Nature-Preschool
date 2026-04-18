@@ -194,12 +194,23 @@ address { font-style: normal; }
 
 .nav-logo-img {
   height: 46px;
-  width: auto;
+  width: 46px;
   display: block;
+  border-radius: 50%;
+  object-fit: cover;
   filter: drop-shadow(0 1px 4px rgba(0,0,0,0.35));
-  transition: opacity var(--transition);
+  opacity: 0;
+  transform: translateY(-8px) scale(0.7);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  pointer-events: none;
 }
 .nav-logo-img:hover { opacity: 0.88; }
+
+.site-header.hero-logo-hidden .nav-logo-img {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
 
 .nav-links {
   display: flex;
@@ -302,15 +313,41 @@ address { font-style: normal; }
 
 .hero-headline {
   color: #fff;
-  margin-bottom: 1.5rem;
+  margin: 0;
+  font-size: clamp(1.6rem, 3.2vw, 2.4rem);
   text-shadow: 0 2px 24px rgba(0,0,0,0.3);
+}
+
+.hero-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.hero-logo {
+  width: clamp(110px, 16vw, 170px);
+  height: clamp(110px, 16vw, 170px);
+  border-radius: 50%;
+  object-fit: cover;
+  background: #fff;
+  padding: 6px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+  flex-shrink: 0;
+}
+
+.hero-main .hero-headline {
+  flex: 1;
+  text-align: center;
 }
 
 .hero-actions {
   display: flex;
   gap: 1rem;
-  justify-content: center;
+  justify-content: flex-end;
   flex-wrap: wrap;
+  flex-shrink: 0;
 }
 
 
@@ -464,7 +501,7 @@ address { font-style: normal; }
 }
 
 .program-card--featured {
-  border: 2px solid var(--green-mid);
+  border: none;
 }
 
 .program-card-top {
@@ -477,6 +514,29 @@ address { font-style: normal; }
   width: 60px;
   height: 60px;
   margin: 0 auto 1rem;
+}
+
+.program-photo {
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(30,44,26,0.18);
+  background: #fff;
+}
+
+.program-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 12px;
+  display: block;
+  background: #fff;
+}
+
+.program-photo img.flip-h {
+  transform: scaleX(-1);
 }
 
 .program-card-top h3 { color: var(--green-deep); margin-bottom: 0.25rem; }
@@ -864,7 +924,9 @@ address { font-style: normal; }
   }
 
   /* Hero */
-  .hero-actions { flex-direction: column; align-items: center; }
+  .hero-actions { flex-direction: column; align-items: center; justify-content: center; }
+  .hero-main { flex-direction: column; }
+  .hero-main .hero-headline { text-align: center; }
 
   /* Gallery */
   .gallery-grid {
@@ -1199,6 +1261,43 @@ address { font-style: normal; }
   color: var(--text-light);
 }
 
+.family-links-video-group {
+  grid-column: 1 / -1;
+  border-top: 1px solid rgba(0,0,0,0.08);
+  padding-top: 1.25rem;
+  margin-top: 0.25rem;
+}
+
+.family-links-video-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin-bottom: 0.75rem;
+}
+
+.family-links-videos {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.family-links-videos .family-link-card--video {
+  flex: 1;
+  min-width: 180px;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  background: var(--off-white);
+}
+
+.family-links-videos .family-link-card--video .flc-icon {
+  flex-shrink: 0;
+  margin-bottom: 0;
+}
+
 
 /* =======================================================
    FOOTER — updated layout for contact form
@@ -1208,13 +1307,15 @@ address { font-style: normal; }
 }
 
 .footer-logo-img {
-  height: 56px;
-  width: auto;
+  height: 64px;
+  width: 64px;
   display: block;
   margin-bottom: 1rem;
-  /* Invert to white for dark footer background */
-  filter: brightness(0) invert(1);
-  opacity: 0.9;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #fff;
+  padding: 4px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
 
 .footer-contact-form h4 {
@@ -1418,6 +1519,16 @@ address { font-style: normal; }
   background: rgba(74, 124, 63, 0.06);
   border-radius: 0 var(--radius) var(--radius) 0;
   padding: 0.9rem 1.25rem;
+}
+
+.about-mission--centered {
+  text-align: center;
+  border-left: none;
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem auto 2rem;
+  max-width: 640px;
+  font-size: 1.25rem;
 }
 
 /* — Philosophy section: large faded leaf watermark — */
