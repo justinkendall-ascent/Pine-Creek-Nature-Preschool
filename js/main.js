@@ -97,6 +97,25 @@
   });
 
 
+  // ---- Nav logo reveal when hero logo scrolls out ----
+  const heroLogo = document.querySelector('.mission-banner-logo');
+  if (heroLogo && header) {
+    const heroLogoObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            header.classList.remove('hero-logo-hidden');
+          } else {
+            header.classList.add('hero-logo-hidden');
+          }
+        });
+      },
+      { threshold: 0 }
+    );
+    heroLogoObserver.observe(heroLogo);
+  }
+
+
   // ---- Footer year ----
   const yearEl = document.getElementById('year');
   if (yearEl) {
