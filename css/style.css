@@ -1738,3 +1738,31 @@ address { font-style: normal; }
 .band {
   border-bottom: 1px solid rgba(0, 0, 0, 0.18);
 }
+
+/* — Supporters banner — */
+.supporters-banner {
+  background: #f7f3ee;
+  border-top: 1px solid rgba(0,0,0,0.08);
+  padding: 2.5rem 1rem;
+}
+.supporters-inner {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+.alora-logo {
+  height: 80px;
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+.supporters-text {
+  font-size: 1rem;
+  color: var(--text-mid);
+  max-width: 560px;
+  margin: 0;
+  line-height: 1.6;
+}
