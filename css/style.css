@@ -603,6 +603,15 @@ address { font-style: normal; }
 .program-details li:last-child { border: none; padding: 0; }
 .program-details strong { color: var(--text-dark); }
 
+.program-card-body p.program-monday-note {
+  margin-top: 0.85rem;
+  margin-bottom: 0;
+  font-size: 0.85rem;
+  color: var(--text-light);
+  font-style: italic;
+  line-height: 1.55;
+}
+
 .programs-note {
   text-align: center;
   font-size: 0.88rem;
@@ -1772,4 +1781,12 @@ address { font-style: normal; }
   max-width: 560px;
   margin: 0;
   line-height: 1.6;
+}
+.supporters-funding {
+  flex-basis: 100%;
+  font-size: 0.82rem;
+  color: var(--text-light);
+  max-width: 640px;
+  margin-inline: auto;
+  line-height: 1.5;
 }
