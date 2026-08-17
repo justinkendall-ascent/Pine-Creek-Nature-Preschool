@@ -8,6 +8,23 @@ truth is traceable. Newest first.
 
 ---
 
+## 2026-08-17
+
+### Changed
+
+- **Site address** — the physical/site address is now **42782 Old Souls Drive,
+  Baker City, OR**, replacing 42692 Pocahontas Road. Updated in the "Where We
+  Meet" paragraph and in the footer `Site:` line. The mailing address (43680
+  Pocahontas Rd) is unchanged.
+- **Where We Meet map** — the embed now pins by latitude/longitude
+  (`44.813448, -117.9689928`) instead of by address query. "42782 Old Souls
+  Drive" does not geocode — both Google and OpenStreetMap fail to resolve it —
+  so an address-based embed would drop the pin in the wrong place or not at all.
+  The coordinates are the farm's own, taken from the map link published on
+  oldsoulsfarm.co, and reverse-geocode to Pocahontas Road in Baker City. The
+  visible pin location is unchanged from before. A comment in `index.html`
+  records this so the query isn't "helpfully" switched back to an address later.
+
 ## 2026-07-31
 
 Source: "MORE website changes" (Emily Denne, Jul 31, 2026).
